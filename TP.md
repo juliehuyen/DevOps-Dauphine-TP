@@ -129,6 +129,12 @@ echo $WORDPRESS_DB_PASSWORD
    2. Créer une configuration cloudbuild pour construire l'image docker et la publier sur le depôt Artifact Registry
    3. Envoyer (`submit`) le job sur Cloud Build et vérifier que l'image a bien été créée
 
+```
+gcloud builds submit --config cloudbuild.yaml .
+```
+![image10](./images/image10.png) 
+![image11](./images/image11.png) 
+
 ## Partie 3 : Déployer Wordpress sur Cloud Run puis Kubernetes 🔥
 
 Nous allons maintenant mettre les 2 parties précédentes ensemble.
