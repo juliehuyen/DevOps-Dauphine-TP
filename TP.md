@@ -112,8 +112,17 @@ docker run --name some-wordpress -p 8080:80 -d wordpress
         - `WORDPRESS_DB_PASSWORD=ilovedevops`
         - `WORDPRESS_DB_NAME=wordpress`
         - `WORDPRESS_DB_HOST=0.0.0.0`
-   3. Construire l'image docker.
-   4. Lancer une instance de l'image, ouvrez un shell. Vérifier le résultat de la commande `echo $WORDPRESS_DB_PASSWORD`
+   3. Construire l'image docker.  
+```
+docker build -t image-wordpress:0.1 .
+```
+   4. Lancer une instance de l'image, ouvrez un shell. Vérifier le résultat de la commande `echo $WORDPRESS_DB_PASSWORD`  
+```
+docker run -p 9000:80 --name container-wordpress -d image-wordpress:0.1
+docker exec -it 5d7 bash
+echo $WORDPRESS_DB_PASSWORD
+```
+![image9](./images/image9.png) 
 
 6. Pipeline d'Intégration Continue (CI):
    1. Créer un dépôt de type `DOCKER` sur artifact registry (si pas déjà fait, sinon utiliser celui appelé `website-tools`)
