@@ -240,6 +240,7 @@ gcloud services enable run.googleapis.com --project=devops-tp-449217
 
    ![image18](./images/image18.png) 
    ![image17](./images/image17.png) 
+   ![bucket-state](./images/bucket.png) 
 
 
 
@@ -247,8 +248,9 @@ gcloud services enable run.googleapis.com --project=devops-tp-449217
 
 1. Utiliser Cloud Build pour appliquer les changements d'infrastructure
 2. Quelles critiques du TP pouvez vous faire ? Quels sont les éléments redondants de notre configuration ?
-   1. Quels paramètres avons nous dû recopier plusieurs fois ? Comment pourrions nous faire pour ne pas avoir à les recopier ?
+   1. Quels paramètres avons nous dû recopier plusieurs fois ? Comment pourrions nous faire pour ne pas avoir à les recopier ?  
+   ***On aurait pu utiliser un fichier variables.tf pour définir nos variables comme les régions, l'id du projet, notre image Docker, etc.***  
    2. Quel outil pouvons nous utiliser pour déployer Wordpress sur Kubernetes ? Faites les changements nécessaires dans votre code Terraform.
+   ***On aurait pu utiliser Helm Charts comme vu au TP 5. Je n'ai malheureusement pas le temps de faire les changements nécessaires dans mon code...***  
    3. Comment pourrions nous enlever le mot de passe en clair dans notre code Terraform ? Quelle ressource Kubernetes pouvons nous utiliser pour le stocker ? Faites les changements nécessaires dans votre code Terraform.
-
-![bucket-state](./images/bucket.png) 
+   ***On pourrait utiliser Kubernetes Secrets.***
