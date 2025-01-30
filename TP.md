@@ -78,13 +78,18 @@ docker run --name some-wordpress -p 8080:80 -d wordpress
 ```
    1. Quel est le répertoire courant du container (WORKDIR) ?
    2. Quelles sont les différents fichiers html contenu dans WORKDIR ?  
+
+***Cette capture d'écran répond aux deux questions précédentes :***  
 ![image3](./images/image3.png)
 
 3. Supprimez le container puis relancez en un en spécifiant un port binding (une correspondance de port).
 
    1. Vous devez pouvoir communiquer avec le port par défaut de wordpress : **80** (choisissez un port entre 8000 et 9000 sur votre machine hôte => cloudshell)
 
-   2. Avec la commande `curl`, faites une requêtes depuis votre machine hôte à votre container wordpress. Quelle est la réponse ? (il n'y a pas piège, essayez sur un port non utilisé pour constater la différence)
+   2. Avec la commande `curl`, faites une requêtes depuis votre machine hôte à votre container wordpress. Quelle est la réponse ? (il n'y a pas piège, essayez sur un port non utilisé pour constater la différence).  
+
+   ![image4](./images/image4.png)  
+   ***Il ne se passe rien… Mais c’est normal, car lorsqu’on tente avec un port non utilisé, on obtient une erreur.***
 
    3. Afficher les logs de votre container après avoir fait quelques requêtes, que voyez vous ?
    4. Utilisez l'aperçu web pour afficher le résultat du navigateur qui se connecte à votre container wordpress
