@@ -43,7 +43,7 @@ gcloud storage buckets update gs://${PROJECT_ID}-tfstate --versioning```
 
 2. Définir les éléments de base nécessaires à la bonne exécution de terraform : utiliser l'exemple sur le [repo du cours](https://github.com/aballiet/devops-dauphine-2024/tree/main/exemple/cloudbuild-terraform) si besoin pour vous aider
 ```Je me suis permise de m'insprirer de votre exemple pour activer les APIs nécessaires dans mon main.tf.
-Ensuite, vous pouvez voir mon code à la suite du fichier main.tf pour la création du repository Artifact Registry.````
+Ensuite, vous pouvez voir mon code à la suite du fichier main.tf pour la création du repository Artifact Registry.```
 
 3. Afin de créer la base de données, utiliser la documentation [SQL Database](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database) et enfin un [SQL User](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_user)
    1. Pour `google_sql_database`, définir `name="wordpress"` et `instance="main-instance"`
