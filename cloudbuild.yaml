@@ -1,7 +1,37 @@
 steps:
-- name: 'gcr.io/cloud-builders/docker'
-  script: |
-    docker build -t us-central1-docker.pkg.dev/devops-tp-449217/website-tools/image-wordpress:0.1 .
-  automapSubstitutions: true
-images:
-- 'us-central1-docker.pkg.dev/devops-tp-449217/website-tools/image-wordpress:0.1'
+  # 1️⃣ Initialiser Terraform
+  - name: 'hashicorp/terraform:1.3.6'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        terraform init
+
+  # 2️⃣ Vérifier le plan Terraform (Dry Run)
+  - name: 'hashicorp/terraform:1.3.6'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        terraform plan -out=tfplan
+
+  # 3️⃣ Appliquer les changements Terraform
+  - name: 'hashicorp/terraform:1.3.6'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        terraform apply -auto-approve tfplan
+
+  # 4️⃣ Afficher l'état final de l'infrastructure
+  - name: 'hashicorp/terraform:1.3.6'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        terraform show
+
+timeout: 1800s  # Timeout de 30 minutes pour éviter les blocages
+
+options:
+  logging: CLOUD_LOGGING_ONLY
