@@ -31,3 +31,16 @@ resource "google_artifact_registry_repository" "my-repo" {
   format        = "DOCKER"
   depends_on = [ google_project_service.artifact ]
 }
+
+# SQL Database
+resource "google_sql_database" "database" {
+  name     = "wordpress"
+  instance = "main-instance"
+}
+
+# SQL User
+resource "google_sql_user" "wordpress" {
+   name     = "wordpress"
+   instance = "main-instance"
+   password = "ilovedevops"
+}
