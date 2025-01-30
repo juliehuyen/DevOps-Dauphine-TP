@@ -199,11 +199,13 @@ gcloud services enable run.googleapis.com --project=devops-tp-449217
       gcloud sql instances patch main-instance \
       --authorized-networks=0.0.0.0/0
       ```
+   ![image15](./images/image15.png) 
 
 5. Accéder à notre Wordpress déployé 🚀
    1. Aller sur : https://console.cloud.google.com/run/detail/us-central1/serveur-wordpress/metrics?
    2. Cliquer sur l'URL de votre Cloud Run : similaire à https://serveur-wordpress-oreldffftq-uc.a.run.app
    3. Que voyez vous ? 🙈
+   ![image16](./images/image16.png) 
 
 
 6. Afin d'avoir un déploiement plus robuste pour l'entreprise et économiser les coûts du service CloudSQL, nous allons déployer Wordpress sur Kubernetes
