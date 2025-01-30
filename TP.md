@@ -1,4 +1,4 @@
-# TP 6 
+# TP 6
 
 ![wordpress-logo](images/wordpress-logo.png)
 
