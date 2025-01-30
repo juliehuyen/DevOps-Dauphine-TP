@@ -71,9 +71,12 @@ Wordpress dispose d'une image Docker officielle disponible sur [DockerHub](https
 ```docker pull wordpress
 ```
 
-2. Lancer l'image docker et ouvrez un shell à l'intérieur de votre container:
+2. Lancer l'image docker et ouvrez un shell à l'intérieur de votre container:  
+```docker run --name some-wordpress -p 8080:80 -d wordpress
+```
    1. Quel est le répertoire courant du container (WORKDIR) ?
-   2. Quelles sont les différents fichiers html contenu dans WORKDIR ?
+   2. Quelles sont les différents fichiers html contenu dans WORKDIR ?  
+![image3](./images/image3.png)
 
 3. Supprimez le container puis relancez en un en spécifiant un port binding (une correspondance de port).
 
