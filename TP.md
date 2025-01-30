@@ -96,13 +96,14 @@ docker run --name some-wordpress -p 8080:80 -d wordpress
    4. Utilisez l'aperçu web pour afficher le résultat du navigateur qui se connecte à votre container wordpress
       1. Utiliser la fonction `Aperçu sur le web`
         ![web_preview](images/wordpress_preview.png)
-      2. Modifier le port si celui choisi n'est pas `8000`
+      2. Modifier le port si celui choisi n'est pas `8000`.  
       ***Lorsque je mets le port 8000 (qui n'est pas le bon port), alors j'ai une erreur. Cependant, lorsque je choisis le port 8080 (celui que j'avais choisi précédemment), ça semble fonctionner.***
          ![image8](./images/image8.png)  
       3. Une fenètre s'ouvre, que voyez vous ?
          ![image6](./images/image6.png)  
 
 4. A partir de la documentation, remarquez les paramètres requis pour la configuration de la base de données.
+   ![image7](./images/image7.png)  
 
 5. Dans la partie 1 du TP (si pas déjà fait), nous allons créer cette base de donnée. Dans cette partie 2 nous allons créer une image docker qui utilise des valeurs spécifiques de paramètres pour la base de données.
    1. Créer un Dockerfile
