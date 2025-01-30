@@ -91,12 +91,16 @@ docker run --name some-wordpress -p 8080:80 -d wordpress
    ![image4](./images/image4.png)  
    ***Il ne se passe rien… Mais c’est normal, car lorsqu’on tente avec un port non utilisé, on obtient une erreur.***
 
-   3. Afficher les logs de votre container après avoir fait quelques requêtes, que voyez vous ?
+   3. Afficher les logs de votre container après avoir fait quelques requêtes, que voyez vous ?  
+   ![image5](./images/image5.png)  
    4. Utilisez l'aperçu web pour afficher le résultat du navigateur qui se connecte à votre container wordpress
       1. Utiliser la fonction `Aperçu sur le web`
         ![web_preview](images/wordpress_preview.png)
       2. Modifier le port si celui choisi n'est pas `8000`
+      ***Lorsque je mets le port 8000 (qui n'est pas le bon port), alors j'ai une erreur. Cependant, lorsque je choisis le port 8080 (celui que j'avais choisi précédemment), ça semble fonctionner.***
+         ![image8](./images/image8.png)  
       3. Une fenètre s'ouvre, que voyez vous ?
+         ![image6](./images/image6.png)  
 
 4. A partir de la documentation, remarquez les paramètres requis pour la configuration de la base de données.
 
