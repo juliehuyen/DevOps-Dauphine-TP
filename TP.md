@@ -238,8 +238,8 @@ gcloud services enable run.googleapis.com --project=devops-tp-449217
    kubectl get svc -n wordpress
    ```
 
-   ![image17](./images/image16.png) 
-   ![image18](./images/image16.png) 
+   ![image17](./images/image17.png) 
+   ![image18](./images/image18.png) 
 
 
 
