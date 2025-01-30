@@ -67,7 +67,9 @@ gcloud storage buckets update gs://${PROJECT_ID}-tfstate --versioning
 
 Wordpress dispose d'une image Docker officielle disponible sur [DockerHub](https://hub.docker.com/_/wordpress)
 
-1. Récupérer l'image sur votre machine (Cloud Shell)
+1. Récupérer l'image sur votre machine (Cloud Shell).  
+```docker pull wordpress
+```
 
 2. Lancer l'image docker et ouvrez un shell à l'intérieur de votre container:
    1. Quel est le répertoire courant du container (WORKDIR) ?
