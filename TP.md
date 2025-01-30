@@ -59,8 +59,9 @@ gcloud storage buckets update gs://${PROJECT_ID}-tfstate --versioning
       ```
 4. Lancer `terraform plan`, vérifier les changements puis appliquer les changements avec `terraform apply`
 5. Vérifier que notre utilisateur existe bien : https://console.cloud.google.com/sql/instances/main-instance/users (veiller à bien séléctionner le projet GCP sur lequel vous avez déployé vos ressources)
-![image](./images/image.png)
+![image1](./images/image.png)
 6. Rendez-vous sur https://console.cloud.google.com/sql/instances/main-instance/databases. Quelles sont les base de données présentes sur votre instance `main-instance` ? Quels sont les types ?
+![image2](./images/image2.png)
 
 ## Partie 2 : Docker
 
