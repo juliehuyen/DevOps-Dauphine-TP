@@ -148,6 +148,10 @@ Notre but, ne l'oublions pas est de déployer wordpress sur Cloud Run puis Kuber
 
 2. Reprendre le Dockerfile de la [Partie 2](#partie-2--docker) et le modifier pour que `WORDPRESS_DB_HOST` soit défini avec l'`Adresse IP publique` de notre instance de base de donnée.
 3. Reconstruire notre image docker et la pousser sur notre Artifact Registry en utilisant cloud build
+```
+gcloud builds submit --config cloudbuild.yaml .
+```
+![image12](./images/image12.png) 
 
 ### Déployer notre image docker sur Cloud Run
 
@@ -174,12 +178,18 @@ Notre but, ne l'oublions pas est de déployer wordpress sur Cloud Run puis Kuber
    }
    ```
 
-   ☝️ Vous aurez besoin d'activer l'API : `run.googleapis.com` pour créer la ressource de type `google_cloud_run_service`. Faites en sorte que l'API soit activé avant de créer votre instance Cloud Run 😌
+   ☝️ Vous aurez besoin d'activer l'API : `run.googleapis.com` pour créer la ressource de type `google_cloud_run_service`. Faites en sorte que l'API soit activé avant de créer votre instance Cloud Run 😌  
+```
+gcloud services enable run.googleapis.com --project=devops-tp-449217
+```
 
    Appliquer les changements sur votre projet gcp avec les commandes terraform puis rendez vous sur https://console.cloud.google.com/run pendant le déploiement.
 
+![image13](./images/image13.png) 
+
 2. Observer les journaux de Cloud Run (logs) sur : https://console.cloud.google.com/run/detail/us-central1/serveur-wordpress/logs.
    1. Véirifer la présence de l'entrée `No 'wp-config.php' found in /var/www/html, but 'WORDPRESS_...' variables supplied; copying 'wp-config-docker.php' (WORDPRESS_DB_HOST WORDPRESS_DB_PASSWORD WORDPRESS_DB_USER)`
+   ![image14](./images/image14.png) 
    2. Au bout de 5 min, que se passe-t-il ? 🤯🤯🤯
    3. Regarder le resultat de votre commande `terraform apply` et observer les logs de Cloud Run
 

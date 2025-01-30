@@ -44,3 +44,41 @@ resource "google_sql_user" "wordpress" {
    instance = "main-instance"
    password = "ilovedevops"
 }
+
+data "google_iam_policy" "noauth" {
+   binding {
+      role = "roles/run.invoker"
+      members = [
+         "allUsers",
+      ]
+   }
+}
+
+resource "google_cloud_run_service_iam_policy" "noauth" {
+   location    = google_cloud_run_service.default.location # remplacer par le nom de votre ressource
+   project     = google_cloud_run_service.default.project # remplacer par le nom de votre ressource
+   service     = google_cloud_run_service.default.name # remplacer par le nom de votre ressource
+
+   policy_data = data.google_iam_policy.noauth.policy_data
+}
+
+resource "google_cloud_run_service" "default" {
+name     = "serveur-wordpress"
+location = "us-central1"
+
+template {
+   spec {
+      containers {
+        ports {
+          container_port = 80
+        }
+      image = "us-central1-docker.pkg.dev/devops-tp-449217/website-tools/image-wordpress:0.1"
+      }
+   }
+}
+
+traffic {
+   percent         = 100
+   latest_revision = true
+}
+}
