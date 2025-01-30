@@ -234,6 +234,14 @@ gcloud services enable run.googleapis.com --project=devops-tp-449217
 
    4. Rendez vous sur l'adresse IP publique du service kubernetes Wordpress et vérifiez que Wordpress fonctionne 🔥
 
+   ```
+   kubectl get svc -n wordpress
+   ```
+
+   ![image17](./images/image16.png) 
+   ![image18](./images/image16.png) 
+
+
 
 ## BONUS : Partie 4
 
